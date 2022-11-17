@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+	<title>Bookstore</title>
+	
+</head>
+<body>
+	<h1>Bienvenue</h1>
+	<p>Que souhaitez-vous supprimer ?</p>
+	<h:form>
+		<h:selectOneMenu value="#{livresDao.id}">
+			<f:selectItems value="#{livresDao.listLivres}"/>
+		</h:selectOneMenu>
+		<h:commandButton value="Valider" action="modifierCeLivre.xhtml"/>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+	<title>Bookstore</title>
+	<style>
+		*{
+			background-color: rgb(169, 169, 169);
+		}
+		h1, h2 {
+			font-family: "Times New Roman", Times, serif;
+			font-weight: normal;
+			font-style: italic;
+		}
+		
+		p {
+			font-family: Arial, Helvetica, sans-serif;
+			text-justify: auto;
+		}
+</style>
+</head>
+<body>
+	<h1>Bienvenue</h1>
+	<p>Que souhaitez-vous modifier ?</p>
+	<h:form>
+		<h:selectOneMenu value="#{livresDao.livre}">
+			<f:selectItems value="#{livresDao.listLivres}"/>
+		</h:selectOneMenu>
+		<h:commandButton value="Valider" action="#{livresDao.getUn}"/>
+		<h:commandButton value="Valider2" action="#{livres.get}"/>
+	</h:form>
+	<a href="index.xhtml"><button>Retour</button></a>
+</body>
+</html>

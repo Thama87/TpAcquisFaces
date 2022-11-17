@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough" >
+
+<head>
+	<title>Bookstore</title>
+	<style>
+		*{
+			background-color: rgb(169, 169, 169);
+		}
+		h1, h2 {
+			font-family: "Times New Roman", Times, serif;
+			font-weight: normal;
+			font-style: italic;
+		}
+		
+		p {
+			font-family: Arial, Helvetica, sans-serif;
+			text-justify: auto;
+		}
+</style>
+</head>
+<body>
+	<h1>Bienvenue</h1>
+	<h:form>
+		<h:dataTable var="livre" value="#{livresDao.listLivres}" border="1">
+			<h:column>
+				<f:facet name="header">Titre</f:facet>
+				#{livre.titre}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Auteur</f:facet>
+				#{livre.auteur}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Date</f:facet>
+				#{livre.date}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Prix</f:facet>
+				#{livre.prix}
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<a href="index.xhtml"><button>Retour</button></a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough" >
+
+<head>
+	<title>Bookstore</title>
+	<style>
+		*{
+			background-color: rgb(169, 169, 169);
+		}
+		h1, h2 {
+			font-family: "Times New Roman", Times, serif;
+			font-weight: normal;
+			font-style: italic;
+		}
+		
+		p {
+			font-family: Arial, Helvetica, sans-serif;
+			text-justify: auto;
+		}
+</style>
+</head>
+<body>
+	<h1>Bienvenue</h1>
+	<p>Que souhaitez-vous ajouter ?</p>
+	<h:form>
+		<p>Titre <h:inputText value="#{livres.titre}" a:placeholder="Je suis une légende"/></p> 
+		<p>Auteur <h:inputText value="#{livres.auteur}" a:placeholder="Richard Matheson"/></p> 
+		<p>Date <h:inputText value="#{livres.date}" a:placeholder="juillet 1954"/></p> 
+		<p>Prix <h:inputText value="#{livres.prix}" a:placeholder="8"/></p> 
+		<h:commandButton value="Valider" action="#{livres.ajouter}"/>
+	</h:form>
+	<a href="index.xhtml"><button>Annuler</button></a>
+</body>
+</html>
